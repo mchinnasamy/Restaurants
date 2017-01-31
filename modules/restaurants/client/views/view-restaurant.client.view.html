@@ -1,0 +1,21 @@
+<section ng-controller="RestaurantsController" ng-init="findOne()">
+  <div class="page-header">
+    <h1 ng-bind="restaurant.name"></h1>
+  </div>
+  <div class="pull-right">
+    <a class="btn btn-primary" ui-sref="restaurants.edit({restaurantId: restaurant._id})">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="remove();">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Cuisine
+      <span ng-bind="restaurant.cuisine"></span>
+      Borough
+      <span ng-bind="restaurant.borough"></span>
+    </em>
+  </small>
+</section>

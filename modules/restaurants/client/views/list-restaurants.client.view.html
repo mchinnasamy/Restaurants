@@ -1,0 +1,15 @@
+<section ng-controller="RestaurantsController" ng-init="find()">
+  <div class="page-header">
+    <h1>Restaurants</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="restaurant in restaurants" ui-sref="restaurants.view({restaurantId: restaurant._id})" class="list-group-item">
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="restaurant.name"></h4>
+      <p class="list-group-item-text" ng-bind="restaurant.cuisine"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="restaurants.$resolved && !restaurants.length">
+    No restaurants yet, why don't you <a ui-sref="restaurants.create">create one</a>?
+  </div>
+</section>
